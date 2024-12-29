@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Employee</h1>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ employee_form.as_p }}
+    <div id="id_image-preview-container"></div> {# Preview container #}
+    <button type="submit">Save Changes</button>
+</form>
+<a href="{% url 'employee_list' %}">Cancel</a>
+{% endblock %}

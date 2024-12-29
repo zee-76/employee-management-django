@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Employee List</h1>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<ul>
+    {% for employee in employees %}
+    <li>
+        {{ employee.user.username }} - {{ employee.designation }}
+        <a href="{% url 'employee_edit' employee.user.pk %}">Edit</a>
+        <a href="{% url 'employee_delete' employee.user.pk %}">Delete</a> {# New delete link #}
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_employee' %}">Add New Employee</a>
+{% endblock %}

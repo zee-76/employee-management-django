@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to the Dashboard, {{ user.username }}!</h1>
+<a href="{% url 'employee_list' %}">View Employee List</a><br>
+<a href="{% url 'add_employee' %}">Add New Employee</a><br>
+{% endblock %}

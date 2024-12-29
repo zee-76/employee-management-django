@@ -1,0 +1,8 @@
+*.sqlite3
+__pycache__/
+*.pyc
+/media
+/static
+.DS_Store # macOS
+*.swp  # Vim swap files
+db.sqlite3
