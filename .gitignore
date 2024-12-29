@@ -1,8 +1,8 @@
-*.sqlite3
-__pycache__/
-*.pyc
-/media
-/static
-.DS_Store # macOS
-*.swp  # Vim swap files
+*.sqlite3       # SQLite database files
+__pycache__/    # Python bytecode
+*.pyc           # Python bytecode
+/media          # Django media files (user uploads)
+/static         # Django static files
+.DS_Store       # macOS metadata files
+*.swp           # Vim swap files
 db.sqlite3
